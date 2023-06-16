@@ -4,6 +4,7 @@ import axios from 'axios';
 import LandingPage from './LandingPage/LandingPage.js';
 import YoutubeMain from './youtubeSite/components/YoutubeMainPage.js';
 import NavBar from './NavBar/NavBar.js';
+import Login from './LoginPage/LoginPage.js'
 
 function App() {
   
@@ -16,6 +17,7 @@ function App() {
       <div style={{ paddingTop: '69px', minHeight: 'calc(100vh - 80px)' }}> 
         <Routes>
           <Route path="/" element={<LandingPage />} />
+          <Route path="/login" element={<Login />} />
           <Route path="/youtube" element={<YoutubeMain />} />
         </Routes>
       </div>
