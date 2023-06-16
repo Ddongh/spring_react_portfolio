@@ -1,4 +1,4 @@
-package com.example.portfolio.Controller_0;
+package com.example.portfolio.controller;
 
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,3 +13,4 @@ public class HelloController {
         return "Hello, world!";
     }
 }
+
