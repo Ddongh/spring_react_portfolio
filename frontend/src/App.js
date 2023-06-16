@@ -1,20 +1,27 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import axios from 'axios';
+import LandingPage from './LandingPage/LandingPage.js';
+import YoutubeMain from './youtubeSite/components/YoutubeMainPage.js';
+import NavBar from './NavBar/NavBar.js';
 
 function App() {
-   const [hello, setHello] = useState('')
+  
 
-    useEffect(() => {
-        axios.get('/api/hello')
-        .then(response => setHello(response.data))
-        .catch(error => console.log(error))
-    }, []);
+  return (
+    <Router>
+      
+      <NavBar />
+      
+      <div style={{ paddingTop: '69px', minHeight: 'calc(100vh - 80px)' }}> 
+        <Routes>
+          <Route path="/" element={<LandingPage />} />
+          <Route path="/youtube" element={<YoutubeMain />} />
+        </Routes>
+      </div>
 
-    return (
-        <div>
-            백엔드에서 가져온 데이터입니다 : {hello}
-        </div>
-    );
+    </Router>
+  );
 }
 
 export default App;
